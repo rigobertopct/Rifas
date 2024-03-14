@@ -15,9 +15,13 @@
     const nombre_web = document.getElementById('nombre');
     const tarjeta_web = document.getElementById('tarjeta');
     const telefono_web = document.getElementById('telefono');
+
+    const nombre_text=nombre_web.toString()
+    const tarjeta_text=tarjeta_web.toString()
+    const telefono_text=telefono_web.toString()
     Telegram.WebApp.ready();
     Telegram.WebApp.MainButton.setText('Guardar').show().onClick(function () {
-        const data = JSON.stringify({nombre: nombre_web, tarjeta: tarjeta_web, telefono: telefono_web});
+        const data = JSON.stringify({nombre: nombre_text, tarjeta: tarjeta_text, telefono: telefono_text});
         Telegram.WebApp.sendData(data);
         Telegram.WebApp.close();
     });
