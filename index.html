@@ -12,12 +12,12 @@
 </head>
 
 <script type="text/javascript">
-    const nombre_web = document.getElementById('nombre').value
-    const tarjeta_web = document.getElementById('tarjeta').value
-    const telefono_web = document.getElementById('telefono').value
+    const nombre_web = document.getElementById('nombre');
+    const tarjeta_web = document.getElementById('tarjeta');
+    const telefono_web = document.getElementById('telefono');
     Telegram.WebApp.ready();
     Telegram.WebApp.MainButton.setText('Guardar').show().onClick(function () {
-        const data = JSON.stringify({nombre: nombre_web, tarjeta: tarjeta_web, telefono: telefono_web});
+        const data = JSON.stringify({nombre: nombre_web.value, tarjeta: tarjeta_web.value, telefono: telefono_web.value});
         Telegram.WebApp.sendData(data);
         Telegram.WebApp.close();
     });
